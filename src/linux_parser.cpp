@@ -260,7 +260,9 @@ string LinuxParser::Ram(int pid) {
       }
     }
   }
-  return std::to_string(std::stof(it)*0.001);
+  long val;
+  val = it==""?0:stol(it)/1024; // Use of ternary operator 
+  return std::to_string(val);
 }
 
 // DONE: Read and return the user ID associated with a process
